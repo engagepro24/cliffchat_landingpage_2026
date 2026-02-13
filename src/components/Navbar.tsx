@@ -35,7 +35,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#cta"
+            href="https://www.cliffchat.chat"
             className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
           >
             SignUp

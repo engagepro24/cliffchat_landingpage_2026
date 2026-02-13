@@ -304,10 +304,10 @@ const HeroSection = () => {
                 className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
               >
                 <a
-                  href="#cta"
+                  href="https://www.cliffchat.chat"
                   className="group inline-flex items-center justify-center gap-2.5 rounded-2xl gradient-orange px-9 py-4 text-base font-bold text-primary-foreground shadow-lg hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
                 >
-                  Get Started
+                  SignUp
                   <span className="group-hover:translate-x-1 transition-transform duration-200">
                     <ArrowRight size={18} />
                   </span>
