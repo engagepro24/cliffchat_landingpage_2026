@@ -15,7 +15,7 @@ const Footer = () => (
           <a href="#features" className="hover:text-foreground transition-colors">Features</a>
           <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
           <a href="#" className="hover:text-foreground transition-colors">Terms</a>
-          <a href="#" className="hover:text-foreground transition-colors">Contact</a>
+          {/* <a href="#" className="hover:text-foreground transition-colors">Contact</a> */}
         </div>
 
         <div className="flex items-center gap-4">
