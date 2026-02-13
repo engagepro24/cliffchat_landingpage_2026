@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -11,12 +12,14 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/40">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-8">
-        <a href="#" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <img src={logo} alt="Cliff Chat" className="h-10 w-10 object-contain" />
           <span className="text-lg font-bold text-foreground tracking-tight">
             Cliff<span className="text-primary">Chat</span>
@@ -29,6 +32,17 @@ const Navbar = () => {
             <a
               key={link.label}
               href={link.href}
+              onClick={(e) => {
+                e.preventDefault();
+
+                if (location.pathname === "/") {
+                  const element = document.getElementById(link.href.replace("#", ""));
+                  element?.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  navigate("/" + link.href);
+                }
+              }}
+
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
@@ -63,14 +77,15 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-4 p-6">
               {navLinks.map((link) => (
-                <a
+                <Link
+
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <a
                 href="#cta"
