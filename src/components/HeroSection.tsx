@@ -200,6 +200,14 @@ const HeroSection = () => {
           </div>
         </div>
 
+        {/* 
+        <div className="grid grid-cols-1  md:grid-cols-2" >
+          <div>
+            faf
+          </div>
+          <div>adfs</div>
+        </div> */}
+
         {/* ── Main Content ─────────────────────────────────── */}
         <div className="flex-1 container mx-auto px-4 md:px-8 py-12 md:py-20 flex items-center">
           <div className="w-full grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-20 items-center">

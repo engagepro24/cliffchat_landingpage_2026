@@ -1,63 +1,105 @@
-export default function DevicesSection() {
-    return (
-        <section className="bg-[#f5f6f7] py-28 px-6">
-            <div className="max-w-6xl mx-auto text-center">
+import { motion } from "framer-motion";
+import { MessageCircle, Lock, Users, Image, Heart, UserCircle } from "lucide-react";
 
-                {/* Heading */}
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
-                    Beautiful on Every Device
+import image1 from "../assets/image1.png";
+import image2 from "../assets/image2.png";
+import image3 from "../assets/image3.png";
+import image4 from "../assets/image4.png";
+import image5 from "../assets/image5.png";
+
+
+const features = [
+    {
+        icon: MessageCircle,
+        image: image1,
+        title: "Instant Messaging",
+        desc: "Send and receive messages in real-time with lightning speed."
+    },
+    {
+        icon: Lock,
+        image: image3,
+        title: "End-to-End Encryption",
+        desc: "Your conversations are fully secure and private."
+    },
+    {
+        icon: Users,
+        image: image4,
+        title: "Group Chats",
+        desc: "Create groups and stay connected with your team or friends."
+    },
+    {
+        icon: Users,
+        image: image5,
+        title: "Group Chats",
+        desc: "Create groups and stay connected with your team or friends."
+    },
+];
+
+
+const container = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.1 } },
+};
+
+const item = {
+    hidden: { opacity: 0, y: 24 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const FeaturesSection = () => (
+    <section id="features" className="py-24 md:py-32">
+        <div className="container mx-auto px-4 md:px-8">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+            >
+                <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary mb-4 tracking-wide uppercase">
+                    Universal Accessibility
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-4">
+                    Beautiful on  <span className="gradient-text">Every Device</span>
                 </h2>
-
-                {/* Subheading */}
-                <p className="mt-5 text-lg text-gray-500 max-w-2xl mx-auto">
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                     A sleek, responsive interface that works perfectly in any browser.
                 </p>
+            </motion.div>
+            <motion.div
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="grid md:grid-cols-2 gap-6"
+            >
+                {features.map((f, i) => (
+                    <motion.div
+                        key={i}
+                        className="glass-card rounded-2xl p-8 group hover:scale-[1.02] hover:shadow-xl transition-all duration-300 cursor-default"
+                    >
+                        <img
+                            src={f.image}
+                            alt={f.title}
+                            className="w-full h-48 object-cover rounded-lg mb-4"
+                        />
 
-                {/* Main Rounded Container */}
-                <div className="mt-20 bg-white/60 rounded-3xl p-8 md:p-14 shadow-[0_20px_60px_rgba(0,0,0,0.05)] backdrop-blur-sm">
-
-                    {/* Grid Layout */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-
-                        {/* Card 1 */}
-                        <div className="bg-white rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] transition duration-300">
-                            <img
-                                src="https://images.unsplash.com/photo-1587614382346-4ec7d08a29f5?q=80&w=1200"
-                                alt="Chat Interface"
-                                className="w-full h-full object-cover"
-                            />
+                        {/* <div className="w-12 h-12 rounded-xl gradient-orange flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                            <f.icon size={22} className="text-primary-foreground" />
                         </div>
 
-                        {/* Card 2 */}
-                        <div className="bg-white rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] transition duration-300">
-                            <img
-                                src="https://images.unsplash.com/photo-1605902711622-cfb43c4437b1?q=80&w=1200"
-                                alt="Group Chat"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
+                        <h3 className="text-lg font-bold text-foreground mb-2">
+                            {f.title}
+                        </h3>
 
-                        {/* Card 3 */}
-                        <div className="bg-white rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] transition duration-300">
-                            <img
-                                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200"
-                                alt="Video Call"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                            {f.desc}
+                        </p> */}
+                    </motion.div>
+                ))}
+            </motion.div>
 
-                        {/* Card 4 */}
-                        <div className="bg-white rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] transition duration-300">
-                            <img
-                                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200"
-                                alt="Settings Panel"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
+        </div>
+    </section>
+);
 
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-}
+export default FeaturesSection;
