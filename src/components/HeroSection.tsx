@@ -147,6 +147,7 @@ const HeroSection = () => {
       <style>{floatKeyframes}</style>
 
       <section
+        id="home"
         ref={containerRef}
         className="relative min-h-screen flex flex-col overflow-hidden pt-16 bg-background"
       >
