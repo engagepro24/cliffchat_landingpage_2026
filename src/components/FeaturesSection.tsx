@@ -4,10 +4,10 @@ import { MessageCircle, Lock, Users, Image, Heart, UserCircle } from "lucide-rea
 const features = [
   { icon: MessageCircle, title: "Real-Time Messaging", desc: "Instant delivery with live typing indicators and read receipts." },
   { icon: Lock, title: "End-to-End Encryption", desc: "Your messages are fully encrypted — only you and your recipient can read them." },
-  { icon: Users, title: "Group Chats", desc: "Create groups with up to 500 members. Manage roles, pins, and more." },
+  { icon: Users, title: "Group Chats", desc: "Create groups with your friends and family to share experiences and stay connected." },
   { icon: Image, title: "Media & File Sharing", desc: "Share photos, videos, documents, and voice notes seamlessly." },
   { icon: Heart, title: "Message Reactions", desc: "React to any message with emojis for quick, expressive responses." },
-  { icon: UserCircle, title: "Customizable Profiles", desc: "Express yourself with custom avatars, bios, and status messages." },
+  { icon: UserCircle, title: "Customizable Profiles", desc: "Express yourself with custom avatars" },
 ];
 
 const container = {

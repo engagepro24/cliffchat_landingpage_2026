@@ -424,7 +424,7 @@ const HeroSection = () => {
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                     <span className="text-xs font-bold text-foreground">
-                      12 online now
+                      1000+ online now
                     </span>
                   </div>
                 </motion.div>
@@ -439,7 +439,7 @@ const HeroSection = () => {
                   <div className="flex items-center gap-2">
                     <Zap size={12} className="text-primary" />
                     <span className="text-xs font-bold text-foreground">
-                      Delivered in 23ms
+                      Delivered in Fast
                     </span>
                   </div>
                 </motion.div>
