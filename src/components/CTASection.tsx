@@ -26,7 +26,7 @@ const CTASection = () => (
           href="#"
           className="inline-flex items-center justify-center gap-2 rounded-2xl gradient-orange px-10 py-5 text-lg font-bold text-primary-foreground shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all"
         >
-          Get Started Free <ArrowRight size={20} />
+          SignUp Free <ArrowRight size={20} />
         </a>
       </motion.div>
     </div>

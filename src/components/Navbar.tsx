@@ -38,7 +38,7 @@ const Navbar = () => {
             href="#cta"
             className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
           >
-            Get Started
+            SignUp
           </a>
         </div>
 
