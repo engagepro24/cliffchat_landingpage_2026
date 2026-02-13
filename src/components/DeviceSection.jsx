@@ -81,7 +81,7 @@ const FeaturesSection = () => (
                         <img
                             src={f.image}
                             alt={f.title}
-                            className="w-full h-48 object-cover rounded-lg mb-4"
+                            className="w-full h-48 object-cover rounded-sm mb-4"
                         />
 
                         {/* <div className="w-12 h-12 rounded-xl gradient-orange flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
