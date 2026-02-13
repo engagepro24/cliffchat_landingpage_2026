@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { UserPlus, MessageSquare, Wifi } from "lucide-react";
 
 const steps = [
-  { icon: UserPlus, num: "01", title: "Create Account", desc: "Sign up in seconds with your email or phone number." },
+  { icon: UserPlus, num: "01", title: "Create Account", desc: "Sign up in seconds with your email." },
   { icon: MessageSquare, num: "02", title: "Start Chatting", desc: "Open Cliff Chat in your browser and message anyone instantly." },
   { icon: Wifi, num: "03", title: "Stay Connected", desc: "Enjoy seamless, real-time conversations from any device." },
 ];
