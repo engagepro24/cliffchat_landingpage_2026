@@ -67,8 +67,8 @@ const LegalPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <article className="container mx-auto px-4 md:px-8 py-12 max-w-3xl">
-        <h1 className="text-3xl font-bold text-foreground mb-8">
+      <article className="container mx-auto px-4 md:px-8 pt-24 pb-12 max-w-3xl">
+        <h1 className="text-3xl font-bold text-foreground mb-8 scroll-mt-20">
           {data.title}
         </h1>
         <div className="prose prose-neutral dark:prose-invert prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground max-w-none">
