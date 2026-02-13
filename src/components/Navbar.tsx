@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
@@ -15,6 +15,29 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    };
+
+    if (open) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
+
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/40">
@@ -65,9 +88,63 @@ const Navbar = () => {
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
+      {/* <button
+    className="md:hidden p-2 text-foreground"
+    onClick={() => setOpen(!open)}
+    aria-label="Toggle menu"
+  >
+    {open ? <X size={22} /> : <Menu size={22} />}
+  </button> */}
+
+      <div ref={menuRef}>
+
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              className="md:hidden overflow-hidden glass-card border-t border-border/30"
+            >
+              <div className="flex flex-col gap-4 p-6">
+                {navLinks.map((link) => (
+                  <a
+
+                    key={link.label}
+                    href={link.href}
+                    onClick={(e) => {
+                      // e.preventDefault();
+
+                      if (location.pathname === "/") {
+                        const element = document.getElementById(link.href.replace("#", ""));
+                        element?.scrollIntoView({ behavior: "smooth" });
+                        setOpen(false);
+                      } else {
+                        navigate("/" + link.href);
+                        setOpen(false);
+                      }
+                    }}
+                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <a
+                  href="https://www.cliffchat.chat"
+                  className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
+                  onClick={() => setOpen(false)}
+                >
+                  SignUp
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
 
       {/* Mobile menu */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {open && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
@@ -88,16 +165,16 @@ const Navbar = () => {
                 </Link>
               ))}
               <a
-                href="#cta"
+                href="https://www.cliffchat.chat"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
                 onClick={() => setOpen(false)}
               >
-                Get Started
+                SignUp
               </a>
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </nav>
   );
 };
