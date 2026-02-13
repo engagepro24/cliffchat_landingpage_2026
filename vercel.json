@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/legal/:path*",
+      "destination": "https://www.cliffchat.chat/api/legal/:path*"
+    }
+  ]
+}
