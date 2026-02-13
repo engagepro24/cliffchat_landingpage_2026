@@ -32,6 +32,8 @@ const Footer = () => (
         </div> */}
       </div>
 
+
+
       <p className="text-center text-xs text-muted-foreground mt-8">
         © 2026 Cliff Chat. All rights reserved.
       </p>
