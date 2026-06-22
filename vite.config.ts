@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => ({
     },
     proxy: {
       "/api/legal": {
-        target: "https://www.cliffchat.chat",
+        target: "https://app.cliffchat.chat",
         changeOrigin: true,
       },
     },
