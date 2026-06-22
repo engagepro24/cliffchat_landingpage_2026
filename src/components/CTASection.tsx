@@ -23,7 +23,7 @@ const CTASection = () => (
           Join millions who trust Cliff Chat for fast, secure, and beautiful messaging.
         </p>
         <a
-          href="https://www.cliffchat.chat"
+          href="https://app.cliffchat.chat"
           className="inline-flex items-center justify-center gap-2 rounded-2xl gradient-orange px-10 py-5 text-lg font-bold text-primary-foreground shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all"
         >
           SignUp  <ArrowRight size={20} />

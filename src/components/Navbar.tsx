@@ -73,7 +73,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="https://www.cliffchat.chat"
+            href="https://app.cliffchat.chat"
             className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
           >
             SignUp
@@ -132,7 +132,7 @@ const Navbar = () => {
                   </a>
                 ))}
                 <a
-                  href="https://www.cliffchat.chat"
+                  href="https://app.cliffchat.chat"
                   className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
                   onClick={() => setOpen(false)}
                 >
